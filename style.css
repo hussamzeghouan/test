@@ -1,0 +1,139 @@
+
+:root {
+  --primary: #863DFF;
+  --primary-dark: #6325CC;
+  --secondary: #CBFF2E;
+  --bg-dark: #070A26;
+  --bg-card: #11132E;
+  --bg-input: #1A1E3C;
+  --text: #fff;
+  --text-secondary: #DDE0FF;
+  --border: #2A2E4A;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(7, 10, 38, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+input[type="range"],
+select,
+input[type="color"] {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 0.5rem;
+}
+
+input[type="color"] {
+  height: 2.5rem;
+  padding: 0;
+}
+
+.canvas-wrapper {
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  border-radius: 12px;
+  background: var(--bg-input);
+}
+
+.placeholder {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-secondary);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.primary {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: #fff;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn.light-dark {
+  background: #2A2E4A;
+  color: var(--text);
+}
+
+body.light {
+  background: #fefefe;
+  color: #000;
+}
+
+body.light .card {
+  background: #fff;
+  color: #000;
+}
+
+body.light .btn.primary {
+  background: var(--primary);
+}
