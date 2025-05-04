@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distorto - Advanced</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Distorto</h1>
+    </div>
+    <div class="main-content">
+        <div class="controls">
+            <input type="file" accept="image/*" id="imageUpload">
+            <input type="text" id="imageURL" placeholder="Paste image URL" />
+            <div class="slider-group">
+                <label>Canvas Size</label>
+                <input type="range" id="canvasSize" min="400" max="2000" value="1000">
+                <span id="canvasSizeValue">1000</span>
+            </div>
+            <div class="slider-group">
+                <label>Number of Slices</label>
+                <input type="range" id="slices" min="2" max="20" value="10">
+                <span id="slicesValue">10</span>
+            </div>
+            <div class="slider-group">
+                <label>Slice Angle</label>
+                <input type="range" id="angle" min="0" max="360" value="0">
+                <span id="angleValue">0°</span>
+            </div>
+            <div class="slider-group">
+                <label>Offset Amount</label>
+                <input type="range" id="offset" min="0" max="100" value="20">
+                <span id="offsetValue">20</span>
+            </div>
+            <label><input type="checkbox" id="lockImage"> Lock Image (no movement)</label>
+            <div class="slider-group">
+                <label>Choose Effect</label>
+                <div class="effect-grid">
+                    <div class="effect-card active" data-effect="mirror">🪞 Mirror</div>
+                    <div class="effect-card" data-effect="wave">🌊 Wave</div>
+                    <div class="effect-card" data-effect="spiral">🌀 Spiral</div>
+                    <div class="effect-card" data-effect="ripple">📡 Ripple</div>
+                    <div class="effect-card" data-effect="diagonal">🧊 Diagonal</div>
+                </div>
+            </div>
+            <button id="exportPNG">Export PNG</button>
+            <button id="copySVG">Copy SVG</button>
+            <button id="downloadSVG">Download SVG</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div id="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
