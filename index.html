@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwatchFlow</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SwatchFlow</h1>
+      <p>Transform your artwork into grid-based vector patterns</p>
+    </header>
+
+    <!-- Upload Section -->
+    <div class="upload-area" id="uploadArea">
+      <input type="file" id="fileInput" accept=".png, .jpg, .jpeg, .svg" class="file-input">
+      <div class="upload-content">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <h3>Upload Artwork</h3>
+        <p>Drag & drop your file here or click to browse</p>
+        <span class="file-types">PNG, JPG, JPEG, SVG</span>
+      </div>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="controls-panel">
+      <div class="control-group">
+        <label>
+          <span>Grid Size</span>
+          <span class="value" id="gridSizeValue">20</span>
+        </label>
+        <input type="range" id="gridSize" min="5" max="100" value="20" class="slider">
+      </div>
+      <div class="control-group">
+        <label>
+          <span>Density Threshold</span>
+          <span class="value" id="densityValue">128</span>
+        </label>
+        <input type="range" id="density" min="0" max="255" value="128" class="slider">
+      </div>
+      <div class="control-group">
+        <label for="shape">Shape Style</label>
+        <div class="shape-selector">
+          <label class="shape-option">
+            <input type="radio" name="shape" value="rect" checked>
+            <span class="shape-icon rect-icon"></span>
+            <span>Rectangle</span>
+          </label>
+          <label class="shape-option">
+            <input type="radio" name="shape" value="dot">
+            <span class="shape-icon dot-icon"></span>
+            <span>Circle</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canvas Section -->
+    <div class="canvas-container">
+      <div id="placeholder" class="placeholder">
+        <i class="fas fa-image"></i>
+        <p>Upload an image to see the preview</p>
+      </div>
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Processing your artwork...</p>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button id="copyButton" class="btn primary">
+        <i class="far fa-copy"></i> Copy SVG
+      </button>
+    </div>
+
+    <!-- Hidden SVG Output -->
+    <pre id="svgOutput" class="hidden"></pre>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>Designed with <span class="heart">❤️</span> for all creative minds</p>
+      <p>Created by Hussam Zeghouan</p>
+      <div class="social-links">
+        <a href="https://instagram.com/hsm_ze" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.behance.net/hsm_ze" target="_blank" aria-label="Behance">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://linktr.ee/hsm_ze" target="_blank" aria-label="Linktree">
+          <i class="fas fa-link"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
